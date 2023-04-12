@@ -1,7 +1,7 @@
 let flexBasis="";
 
-const button=document.querySelector("button").addEventListener("click",function(e){
-    dimension=document.querySelector('#gridsize').value;
+const button=document.getElementById("btndimension").addEventListener("click",function(e){
+    const dimension=document.querySelector('#gridsize').value;
     const container =document.getElementById("container");
     //set the dimension of the div removing the border
     flexBasis=((500/dimension)-2)+"px";
@@ -18,5 +18,9 @@ const button=document.querySelector("button").addEventListener("click",function(
         div.style.flexShrink=1;        
         container.appendChild(div);
     }
-
-  });
+ });
+ //select the color 
+ const btncolor=document.getElementById("btncolor").addEventListener("click",function(e){
+    const color=document.getElementById("colorpicker").value;
+    console.log(color);
+})
