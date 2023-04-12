@@ -1,4 +1,5 @@
 let flexBasis="";
+let color="#00FF00";
 
 const button=document.getElementById("btndimension").addEventListener("click",function(e){
     const dimension=document.querySelector('#gridsize').value;
@@ -15,12 +16,26 @@ const button=document.getElementById("btndimension").addEventListener("click",fu
         div.classList.add("box");
         div.style.flexBasis=flexBasis;
         div.style.flexGrow=1;
-        div.style.flexShrink=1;        
+        div.style.flexShrink=0;        
         container.appendChild(div);
-    }
+     }
+     //applcia la funzione di mouseover e cambia colore
+     //il colore inizialmente è quello dichiarato all'inziio dello script
+    const over = document.querySelectorAll(".box");
+    over.forEach(box => {
+    box.addEventListener('mouseover', function() {
+    this.style.backgroundColor = color;
+  });
+});
+
+   
  });
- //select the color 
+ //Seleziona il colore desiderato
  const btncolor=document.getElementById("btncolor").addEventListener("click",function(e){
-    const color=document.getElementById("colorpicker").value;
-    console.log(color);
-})
+    color=document.getElementById("colorpicker").value;
+   
+  
+    
+});
+
+
